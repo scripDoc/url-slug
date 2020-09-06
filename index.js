@@ -28,7 +28,7 @@ app.get('/:id', async (req, res, next) => {
     const data = await urls.findOne({ slug })
 
     if (data) {
-      res.redirect(301, data.url)
+      return res.redirect(301, data.url)
     }
 
     res.redirect(`/?error=${slug} not found`)
