@@ -14,18 +14,20 @@
     <h1>Short URL is easy!</h1>
   </header>
   <main id="app" class="container" v-cloak>
-    <div class="row">
-      <div class="six column">
-        <form @submit.prevent="createUrl">
+    <form @submit.prevent="createUrl">
+      <div class="row">
+        <div class="six columns">
           <label for="url">Url</label>
           <input v-model="url" class="u-full-width" id="url" name="url" type="text" placeholder="http://yoursite.com">
+        </div>
+        <div class="six columns">
           <label for="slug">Slug</label>
           <input v-model="slug" class="u-full-width" id="slug" name="slug" type="text">
-          <button class="button-primary" type="submit">Create</button>
-        </form>
-        <pre v-if="created"><code>{{ JSON.stringify(created, null, 2) }}</code></pre>
+        </div>
       </div>
-    </div>
+      <button class="button-primary" type="submit">Create</button>
+    </form>
+    <pre v-if="created"><code>{{ JSON.stringify(created, null, 2) }}</code></pre>
   </main>
 
   <script src="https://unpkg.com/vue@2.6.12/dist/vue.js"></script>
