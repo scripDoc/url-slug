@@ -1,32 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
-    <link rel="stylesheet" href="style.css">
-    <title>URL Slug</title>
-</head>
-<body>
-    <header>
-        <h1>Short URL is easy!</h1>
-    </header>
-    <main id="app" class="container" v-cloak>
-        <div class="row">
-            <div class="six column">
-                <form @submit.prevent="createUrl">
-                    <label for="url">Url</label>
-                    <input v-model="url" class="u-full-width" id="url" name="url" type="text" placeholder="http://yoursite.com">
-                    <label for="slug">Slug</label>
-                    <input v-model="slug" class="u-full-width" id="slug" name="slug" type="text">
-                    <button class="button-primary" type="submit">Create</button>
-                </form>
-                <pre v-if="created"><code>{{ JSON.stringify(created, null, 2) }}</code></pre>
-            </div>
-        </div>
-    </main>
 
-    <script src="https://unpkg.com/vue@2.6.12/dist/vue.js"></script>
-    <script src="app.js"></script>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+  <link rel="stylesheet" href="style.css">
+  <title>URL Slug</title>
+</head>
+
+<body>
+  <header>
+    <h1>Short URL is easy!</h1>
+  </header>
+  <main id="app" class="container" v-cloak>
+    <div class="row">
+      <div class="six column">
+        <form @submit.prevent="createUrl">
+          <label for="url">Url</label>
+          <input v-model="url" class="u-full-width" id="url" name="url" type="text" placeholder="http://yoursite.com">
+          <label for="slug">Slug</label>
+          <input v-model="slug" class="u-full-width" id="slug" name="slug" type="text">
+          <button class="button-primary" type="submit">Create</button>
+        </form>
+        <pre v-if="created"><code>{{ JSON.stringify(created, null, 2) }}</code></pre>
+      </div>
+    </div>
+  </main>
+
+  <script src="https://unpkg.com/vue@2.6.12/dist/vue.js"></script>
+  <script src="app.js"></script>
 </body>
+
 </html>
