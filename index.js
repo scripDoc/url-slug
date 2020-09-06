@@ -15,17 +15,14 @@ urls.createIndex({ slug: 1 }, { unique: true })
 const app = express()
 const port = process.env.PORT || 4242
 
-app.use(helmet())
+app.use(helmet({ contentSecurityPolicy: false }))
 app.use(morgan('dev'))
 app.use(cors())
 app.use(express.json())
 app.use(express.static('./public'))
 
-app.get('/url/:id', (req, res, next) => {
-   // TODO: get a short url by id
-})
 
-app.get('/:id', async (req, res) => {
+app.get('/:id', async (req, res, next) => {
    const { id: slug } = req.params
    try {
       const data = await urls.findOne({ slug })
